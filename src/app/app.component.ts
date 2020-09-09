@@ -31,4 +31,15 @@ export class AppComponent {
       }
     )
  }
+
+ memberClicked = (member)=>{
+    this.api.getMember(member.id).subscribe(
+      data => {
+        console.log(data);
+      },
+      error =>{
+
+      }
+    )
+ }
 }
