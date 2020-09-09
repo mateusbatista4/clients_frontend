@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ApiService {
+  
 
   baseUrl: String = 'http://localhost:8000/';
 
@@ -32,4 +33,13 @@ export class ApiService {
       }
     )
   }
+  createMember(member){
+    return this.http.post(
+      this.baseUrl + 'members/', member,
+      {
+        headers: this.httpHeaders
+      }
+    )
+  }
+  
 }

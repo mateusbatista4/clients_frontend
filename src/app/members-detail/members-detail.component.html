@@ -1,2 +1,9 @@
-<p>members-detail works!</p>
-Memebro Carregado: {{selected_member.name}}
+<h1>Member Detail Component</h1>
+
+Memebro Carregado: {{selected_member.name}} {{selected_member.surname}}
+
+<input type="text" [(ngModel)]="selected_member.id" readonly>
+<input type="text" [(ngModel)]="selected_member.name">
+<input type="text" [(ngModel)]="selected_member.surname">
+<button (click)="update()">Update Memeber</button>
+<button (click)="newMember()">New Memeber</button>

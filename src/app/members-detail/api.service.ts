@@ -23,4 +23,14 @@ export class ApiService {
       }
     )
   }
+  updateMember(member): Observable<any> {
+    let body = {name: member.name, surname: member.surname,phone:member.phone}
+    return this.http.put(
+      this.baseUrl + 'members/' + member.id + '/',
+      body,
+      {
+        headers: this.httpHeaders
+      }
+    )
+  }
 }

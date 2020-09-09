@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
-import { ApiService } from '../api.service';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { ApiService } from './api.service';
 
 @Component({
   selector: 'app-members-detail',
@@ -9,15 +9,15 @@ import { ApiService } from '../api.service';
 })
 export class MembersDetailComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private api: ApiService) { }
+  constructor(private route: ActivatedRoute, private api: ApiService, private router: Router) { }
 
   selected_member = { name: '', id: '', surname: '' };
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe((param: ParamMap)=>{
+    this.route.paramMap.subscribe((param: ParamMap) => {
       let id = parseInt(param.get('id'));
-      
-    this.loadMember(id);
+
+      this.loadMember(id);
     })
   }
   loadMember(id) {
@@ -29,5 +29,18 @@ export class MembersDetailComponent implements OnInit {
         console.log("erro aq: " + error);
       }
     )
+  }
+  update() {
+    this.api.updateMember(this.selected_member).subscribe(
+      data => {
+        this.selected_member = data;
+      },
+      error => {
+        console.log("erro aq: " + error);
+      }
+    )
+  }
+  newMember(){
+    this.router.navigate(['new-member'])
   }
 }
