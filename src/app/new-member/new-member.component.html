@@ -1,8 +1,15 @@
-<h1>Cadastro de Usuário</h1>
+<h3>Cadastro de Usuário</h3>
 
 
-
-<input type="text" [(ngModel)]="new_member.name">
-<input type="text" [(ngModel)]="new_member.surname">
-<input type="text" [(ngModel)]="new_member.phone">
-<button (click)="create()">Create Memeber</button>
+Nome
+<input type="text" [(ngModel)]="new_member.name"><br>
+Sobrenome
+<input type="text" [(ngModel)]="new_member.surname"><br>
+Telefone
+<input type="text" [(ngModel)]="new_member.phone"><br>
+Email
+<input type="text" [(ngModel)]="new_member.email"><br>
+<!-- Foto
+<input #imageInput type="file" accept="image/*"  [(ngModel)]="new_member.profile_picture"><br>
+<br> -->
+<button (click)="create()" class="button special">Create Memeber</button>

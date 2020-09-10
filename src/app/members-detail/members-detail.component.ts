@@ -35,8 +35,12 @@ export class MembersDetailComponent implements OnInit {
     this.api.updateMember(this.selected_member).subscribe(
       data => {
         this.selected_member = data;
-        this.appComponent.members.splice(data.id,1)
-        this.appComponent.members.push(data)
+        let index;
+        this.appComponent.members.forEach((e,i) => {
+          if(e.id == parseInt(this.selected_member.id)) index = i;
+        })
+        this.appComponent.members.splice(index,1)
+        this.appComponent.members.splice(index, 0, data);
         this.router.navigate([''])
       },
       error => {
@@ -61,4 +65,6 @@ export class MembersDetailComponent implements OnInit {
   newMember(){
     this.router.navigate(['new-member'])
   }
+
+  
 }

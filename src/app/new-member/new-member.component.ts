@@ -19,6 +19,8 @@ export class NewMemberComponent implements OnInit {
     name: '',
     surname: '',
     phone: '',
+    email:'',
+    profile_picture:''
   }
   create() {
     this.api.createMember(this.new_member).subscribe(
