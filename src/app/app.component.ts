@@ -12,9 +12,9 @@ export class AppComponent {
   title = 'members-front';
 
   members = [
-    {id: 1, name: "mateus", email:"mateus999batista@gmail.com", surname: "Batista"},
-    {id: 2, name: "mateus", email:"mateus999batista@gmail.com", surname: "Batista"},
-    {id: 3, name: "mateus", email:"mateus999batista@gmail.com", surname: "Batista"}
+    {id: 1, name: "mateus", email:"mateus999batista@gmail.com", surname: "Batista",phone: "999234"},
+    {id: 2, name: "mateus", email:"mateus999batista@gmail.com", surname: "Batista",phone: "999234"},
+    {id: 3, name: "mateus", email:"mateus999batista@gmail.com", surname: "Batista",phone: "999234"}
   ]
 
   constructor(private api: ApiService, private router: Router){

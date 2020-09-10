@@ -1,9 +1,23 @@
-<h1>Member Detail Component</h1>
+<h3>{{selected_member.name}} {{selected_member.surname}}</h3>
 
-Memebro Carregado: {{selected_member.name}} {{selected_member.surname}}
 
-<input type="text" [(ngModel)]="selected_member.id" readonly>
-<input type="text" [(ngModel)]="selected_member.name">
-<input type="text" [(ngModel)]="selected_member.surname">
-<button (click)="update()">Update Memeber</button>
-<button (click)="newMember()">New Memeber</button>
+Nome
+<input type="text" [(ngModel)]="selected_member.name"><br>
+Sobrenome
+<input type="text" [(ngModel)]="selected_member.surname"><br>
+Email
+<input type="text" [(ngModel)]="selected_member.email"><br>
+Telefone
+<input type="text" [(ngModel)]="selected_member.phone"><br>
+<ul class="actions">
+    <li>
+        <button (click)="update()" class="button alt">Update Memeber</button>
+    </li>
+    <li>
+        <button (click)="delete()" class="button alt">Delete Memeber</button>
+    </li>
+    <li>
+        <button class="button special" (click)="newMember()">New Memeber</button>
+    </li>
+
+</ul>

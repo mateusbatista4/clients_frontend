@@ -11,28 +11,26 @@ import { AppComponent } from '../app.component';
 })
 export class NewMemberComponent implements OnInit {
 
-  constructor(private api: ApiService,private appComponent: AppComponent) { }
+  constructor(private api: ApiService, private appComponent: AppComponent) { }
 
   ngOnInit(): void {
   }
   new_member = {
-
     name: '',
     surname: '',
     phone: '',
-
   }
   create() {
     this.api.createMember(this.new_member).subscribe(
       data => {
-       console.log(data)
+        console.log(data)
       },
       error => {
         console.log("erro aq: " + error);
       }
     )
-    
+
   }
-  
+
 
 }

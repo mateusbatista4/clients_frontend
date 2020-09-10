@@ -24,10 +24,18 @@ export class ApiService {
     )
   }
   updateMember(member): Observable<any> {
-    let body = {name: member.name, surname: member.surname,phone:member.phone}
+    let body = { name: member.name, surname: member.surname, phone: member.phone , email: member.email}
     return this.http.put(
       this.baseUrl + 'members/' + member.id + '/',
       body,
+      {
+        headers: this.httpHeaders
+      }
+    )
+  }
+  deleteMember(memberId) {
+    return this.http.delete(
+      this.baseUrl + 'members/' + memberId + '/',
       {
         headers: this.httpHeaders
       }
